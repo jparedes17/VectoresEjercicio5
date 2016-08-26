@@ -190,6 +190,7 @@ public class Frame5 extends javax.swing.JFrame {
     private void cmbCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbCrearActionPerformed
         // TODO add your handling code here:
         int longitud;
+        
         if (txtLongitud.getText().trim().isEmpty())
         {
           JOptionPane.showMessageDialog(this, "Ingrese la longitud", "ERROR", JOptionPane.ERROR_MESSAGE);
@@ -201,9 +202,9 @@ public class Frame5 extends javax.swing.JFrame {
             txtLongitud.requestFocusInWindow();
             txtLongitud.selectAll();
         }
-        else if(Integer.parseInt(txtLongitud.getText().trim())%2==0)
+        else if(Integer.parseInt(txtLongitud.getText().trim())%2!=0)
         {
-            JOptionPane.showMessageDialog(this, "La Longitud no puede ser impar", "ERROR", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "La Longitud no puede ser cero", "ERROR", JOptionPane.ERROR_MESSAGE);
             txtLongitud.requestFocusInWindow();
             txtLongitud.selectAll();
         }
