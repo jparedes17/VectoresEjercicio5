@@ -5,6 +5,9 @@
  */
 package vectoresejercicio5;
 
+import java.math.BigDecimal;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author pared
@@ -14,6 +17,9 @@ public class Frame5 extends javax.swing.JFrame {
     /**
      * Creates new form Frame5
      */
+    double v[];
+    double v1[];
+    double v2[];
     public Frame5() {
         initComponents();
     }
@@ -27,21 +33,274 @@ public class Frame5 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jPanel1 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        txtLongitud = new javax.swing.JTextField();
+        jPanel3 = new javax.swing.JPanel();
+        cmbCrear = new javax.swing.JButton();
+        cmbLlenadoManual = new javax.swing.JButton();
+        cmbLlenadoAutomatico = new javax.swing.JButton();
+        cmbMostrar = new javax.swing.JButton();
+        cmbBorrar = new javax.swing.JButton();
+        cmbDividirVectores = new javax.swing.JButton();
+        cmbSuma = new javax.swing.JButton();
+        cmbMultiplicacion = new javax.swing.JButton();
+        jPanel4 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txtResultado = new javax.swing.JTextArea();
+        jPanel5 = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        txtVector1 = new javax.swing.JTextArea();
+        jPanel6 = new javax.swing.JPanel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        txtVector2 = new javax.swing.JTextArea();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Datos iniciales", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 14))); // NOI18N
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setText("Longitud:");
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, -1, -1));
+
+        txtLongitud.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtLongitudKeyTyped(evt);
+            }
+        });
+        jPanel2.add(txtLongitud, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 30, 110, -1));
+
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, 200, 70));
+
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Botones", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 14))); // NOI18N
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        cmbCrear.setText("Crear");
+        cmbCrear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbCrearActionPerformed(evt);
+            }
+        });
+        jPanel3.add(cmbCrear, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 20, 110, -1));
+
+        cmbLlenadoManual.setText("Llenado Manual");
+        cmbLlenadoManual.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbLlenadoManualActionPerformed(evt);
+            }
+        });
+        jPanel3.add(cmbLlenadoManual, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, -1, -1));
+
+        cmbLlenadoAutomatico.setText("Llenado Autom");
+        cmbLlenadoAutomatico.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbLlenadoAutomaticoActionPerformed(evt);
+            }
+        });
+        jPanel3.add(cmbLlenadoAutomatico, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 110, -1));
+
+        cmbMostrar.setText("Mostrar");
+        cmbMostrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbMostrarActionPerformed(evt);
+            }
+        });
+        jPanel3.add(cmbMostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 110, -1));
+
+        cmbBorrar.setText("Borrar");
+        cmbBorrar.setToolTipText("");
+        cmbBorrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbBorrarActionPerformed(evt);
+            }
+        });
+        jPanel3.add(cmbBorrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 110, -1));
+
+        cmbDividirVectores.setText("Dividir Vectores");
+        cmbDividirVectores.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbDividirVectoresActionPerformed(evt);
+            }
+        });
+        jPanel3.add(cmbDividirVectores, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, -1, -1));
+
+        cmbSuma.setText("Suma");
+        cmbSuma.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbSumaActionPerformed(evt);
+            }
+        });
+        jPanel3.add(cmbSuma, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 200, 110, -1));
+
+        cmbMultiplicacion.setText("Multiplicacion");
+        cmbMultiplicacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbMultiplicacionActionPerformed(evt);
+            }
+        });
+        jPanel3.add(cmbMultiplicacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 110, -1));
+
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 30, 150, 270));
+
+        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Resultado", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 14))); // NOI18N
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        txtResultado.setEditable(false);
+        txtResultado.setColumns(20);
+        txtResultado.setRows(5);
+        jScrollPane1.setViewportView(txtResultado);
+
+        jPanel4.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 160, 140));
+
+        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 120, 190, 170));
+
+        jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Vector 1", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 14))); // NOI18N
+        jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        txtVector1.setEditable(false);
+        txtVector1.setColumns(20);
+        txtVector1.setRows(5);
+        jScrollPane2.setViewportView(txtVector1);
+
+        jPanel5.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 140, 120));
+
+        jPanel1.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, 160, 150));
+
+        jPanel6.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Vector2", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 14))); // NOI18N
+        jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        txtVector2.setEditable(false);
+        txtVector2.setColumns(20);
+        txtVector2.setRows(5);
+        jScrollPane3.setViewportView(txtVector2);
+
+        jPanel6.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 140, 120));
+
+        jPanel1.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 290, 160, 150));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 590, 450));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void cmbCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbCrearActionPerformed
+        // TODO add your handling code here:
+        int longitud;
+        if (txtLongitud.getText().trim().isEmpty())
+        {
+          JOptionPane.showMessageDialog(this, "Ingrese la longitud", "ERROR", JOptionPane.ERROR_MESSAGE);
+          txtLongitud.requestFocusInWindow();
+        }
+        else if(Integer.parseInt(txtLongitud.getText().trim())==0)
+        {
+            JOptionPane.showMessageDialog(this, "La Longitud no puede ser cero", "ERROR", JOptionPane.ERROR_MESSAGE);
+            txtLongitud.requestFocusInWindow();
+            txtLongitud.selectAll();
+        }
+        else if(Integer.parseInt(txtLongitud.getText().trim())%2==0)
+        {
+            JOptionPane.showMessageDialog(this, "La Longitud no puede ser impar", "ERROR", JOptionPane.ERROR_MESSAGE);
+            txtLongitud.requestFocusInWindow();
+            txtLongitud.selectAll();
+        }
+        else {
+        longitud= Integer.parseInt(txtLongitud.getText().trim());
+        v= new double [longitud];
+        v2= new double [longitud];
+        JOptionPane.showMessageDialog(this, "Vector creado Exitosamente");
+        }
+    }//GEN-LAST:event_cmbCrearActionPerformed
+
+    private void cmbLlenadoManualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbLlenadoManualActionPerformed
+        // TODO add your handling code here:
+        double n;
+        for (int i = 0; i < v.length; i++) 
+        {
+            n= Double.parseDouble(JOptionPane.showInputDialog(this, "Digite el elemento en la posicion"));
+            v[i]=n;
+            v2[i]=n;
+        }
+    }//GEN-LAST:event_cmbLlenadoManualActionPerformed
+
+    private void cmbLlenadoAutomaticoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbLlenadoAutomaticoActionPerformed
+        // TODO add your handling code here:
+        double n;
+        for (int i = 0; i < v.length; i++) 
+        {
+            n= (int)(Math.random()* 50 + 1);
+            v[i]=n;
+            v2[i]=n;
+        }
+    }//GEN-LAST:event_cmbLlenadoAutomaticoActionPerformed
+
+    private void cmbMostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbMostrarActionPerformed
+        // TODO add your handling code here:
+        for (int i = 0; i < v.length; i++) 
+        {
+            txtResultado.append(v[i]+"\n");
+            
+        }
+    }//GEN-LAST:event_cmbMostrarActionPerformed
+
+    private void cmbBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbBorrarActionPerformed
+        // TODO add your handling code here:
+        txtLongitud.setText("");
+        txtResultado.setText("");
+        txtVector1.setText("");
+        txtVector2.setText("");
+        txtLongitud.requestFocusInWindow();
+        v= null;
+        v2=null;
+        
+    }//GEN-LAST:event_cmbBorrarActionPerformed
+
+    private void cmbDividirVectoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbDividirVectoresActionPerformed
+        // TODO add your handling code here:
+        double n;
+        int y = 0;
+        double suma = 0;
+        for (int i = 0; i < v.length/2; i++) 
+        {
+         txtVector1.append(v[i]+"\n");
+        }
+        for (int j = v2.length; j > v2.length/2; j--) 
+        {
+                
+                txtVector2.append(v[j-1]+"\n");
+        }
+        
+    }//GEN-LAST:event_cmbDividirVectoresActionPerformed
+
+    private void txtLongitudKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtLongitudKeyTyped
+        // TODO add your handling code here:
+        char c=evt.getKeyChar(); 
+          if(!Character.isDigit(c)) { 
+              getToolkit().beep(); 
+              evt.consume(); 
+          } 
+    }//GEN-LAST:event_txtLongitudKeyTyped
+
+    private void cmbSumaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbSumaActionPerformed
+        // TODO add your handling code here:
+           double suma = 0;
+           for (int i = 0; i < v.length/2; i++) {
+            suma= suma + v[i];
+        }
+           txtVector1.append("La suma es:"+suma);
+    }//GEN-LAST:event_cmbSumaActionPerformed
+
+    private void cmbMultiplicacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbMultiplicacionActionPerformed
+        // TODO add your handling code here:
+        double multiplicacion=1;
+        for (int j = v2.length; j > v2.length/2; j--)  {
+            multiplicacion= multiplicacion*v2[j-1];
+        }
+        txtVector2.append("La multiplacion es"+ new BigDecimal(multiplicacion));
+    }//GEN-LAST:event_cmbMultiplicacionActionPerformed
 
     /**
      * @param args the command line arguments
@@ -79,5 +338,27 @@ public class Frame5 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton cmbBorrar;
+    private javax.swing.JButton cmbCrear;
+    private javax.swing.JButton cmbDividirVectores;
+    private javax.swing.JButton cmbLlenadoAutomatico;
+    private javax.swing.JButton cmbLlenadoManual;
+    private javax.swing.JButton cmbMostrar;
+    private javax.swing.JButton cmbMultiplicacion;
+    private javax.swing.JButton cmbSuma;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JTextField txtLongitud;
+    private javax.swing.JTextArea txtResultado;
+    private javax.swing.JTextArea txtVector1;
+    private javax.swing.JTextArea txtVector2;
     // End of variables declaration//GEN-END:variables
 }
